@@ -5,14 +5,20 @@ const app = express();
 
 const activityRouter = require('./routers/activityRouter')
 
-mongoose.connect('mongodb://localhost/mc_2', {useNewUrlParser: true, useCreateIndex: true, 
+mongoose.connect('mongodb+srv://userMC2:mc2vovey@cluster0-ndxfv.mongodb.net/test?retryWrites=true&w=majority', 
+{useNewUrlParser: true, useCreateIndex: true, 
     useUnifiedTopology: true }).then(() => {console.log("connect to db!!")}).catch( err => {console.log(`error: ${err}`)})
 
 
 app.use('/activities', activityRouter)
 app.use(bodyParser.urlencoded({ extended: true }))
 
-
+app.get('*', (req, res) => {
+    res.json({
+        status: 404,
+        message: "api not found"
+    })
+})
 
 app.listen(3000,()=>{
     console.log('listening at http://localhost:3000')
