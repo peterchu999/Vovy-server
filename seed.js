@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const activityClass =  require('./models/activity')
 
-mongoose.connect('mongodb+srv://userMC2:mc2vovey@cluster0-ndxfv.mongodb.net/test?retryWrites=true&w=majority', 
+mongoose.connect(process.dbURL, 
 {useNewUrlParser: true, useCreateIndex: true, 
     useUnifiedTopology: true }).then(() => {console.log("connect to db!!")}).catch( err => {console.log(`error: ${err}`)})
 
