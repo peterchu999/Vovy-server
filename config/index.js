@@ -1,5 +1,5 @@
-const dotenv = require('dotenv')
 if (process.env.APP_STATE === 'dev'){
+    const dotenv = require('dotenv')
     dotenv.config()
 }
 
