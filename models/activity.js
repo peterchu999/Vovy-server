@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 const activitySchema = new mongoose.Schema({
     title: String,
     image: String,
-    description: Array,
-    additional_information: String,
+    description: String,
+    additional_information: Array,
     registration_deadline: Date,
     schedule: {
         start_date: Date,
@@ -12,7 +12,8 @@ const activitySchema = new mongoose.Schema({
     },
     website_link: String,
     activity_category: Array,
-    englishNeeded: Boolean
+    englishNeeded: Boolean,
+    source: String
 })
 
 module.exports = mongoose.model('Activity',activitySchema)

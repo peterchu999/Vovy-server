@@ -1,25 +1,26 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const cron = require("./cron");
 const app = express();
+const {dbUrl, port} = require('./config')
 
 const activityRouter = require('./routers/activityRouter')
+const defaultRouter = require('./routers/defaultRouter')
 
-mongoose.connect('mongodb+srv://userMC2:mc2vovey@cluster0-ndxfv.mongodb.net/test?retryWrites=true&w=majority', 
-{useNewUrlParser: true, useCreateIndex: true, 
-    useUnifiedTopology: true }).then(() => {console.log("connect to db!!")}).catch( err => {console.log(`error: ${err}`)})
 
+
+mongoose.connect(dbUrl, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+.then(()=>console.log('connected!!!'))
+.catch((err) => console.log(err))
+
+
+cron()
 
 app.use('/activities', activityRouter)
+app.use('*', defaultRouter)
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('*', (req, res) => {
-    res.json({
-        status: 404,
-        message: "api not found"
-    })
-})
-
-app.listen(process.env.PORT,()=>{
-    console.log('listening at http://localhost:3000')
+app.listen(port,()=>{
+    console.log(`listening at http://localhost:${port}`)
 })
