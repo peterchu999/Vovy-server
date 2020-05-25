@@ -1,8 +1,8 @@
 const logClass =  require('../models/logger')
 
-const log = async (activities) => {
+const loggger = async (activities) => {
     try {
-        return response = await logClass.create({
+        return await logClass.create({
             time: (new Date()).toLocaleString(),
             dataChanges: activities
         })
@@ -12,5 +12,5 @@ const log = async (activities) => {
 }
 
 module.exports = {
-    log
+    loggger
 }
