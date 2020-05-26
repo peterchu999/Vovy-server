@@ -9,14 +9,13 @@ const sanitizeHTMLToArray = (data) => {
     const dataString = data
     const tagRegexPattern = /<[^>]*>/g
     const result =  dataString.replace(tagRegexPattern,"").replace(/\n/g,",").trim()
-    return sanitizeComaFromString(result).join(',').trim()
+    return sanitizeComaFromString(result)
 }
 
 const sanitizeComaFromString = (string) => {
-    const raw = string.split(',')
-    return raw.filter( data => {
+    return string.split(',').filter( data => {
         return data.trim().length > 0 ? true : false 
-    })
+    }).join(',').trim()
 }
 
 const convertCategory = (categories) => {
@@ -66,7 +65,7 @@ const mappingDataToActivityObjectFormat = ({n_title, additional_information, pla
     }
 }
 
-const sanitizeData = async () => {
+const getSanitizeData = async () => {
     const {status, data} = await fetchApi()
     if (status === 200) {
         return [...data.results.map(mappingDataToActivityObjectFormat)]
@@ -76,4 +75,4 @@ const sanitizeData = async () => {
 }
 
 
-module.exports = sanitizeData
+module.exports = getSanitizeData
