@@ -25,24 +25,24 @@ const convertCategory = (categories) => {
 const convertFocusIdToCategory = (category) => { // not yet real category
     switch(category) {
         case '549789127e6a6e2c691a1fbf' /* bantuan hukum */ : return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fc0' /* difabilitas */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fc1' /* hak-asasi-manusia */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fc2' /* kepemimpinan-dan-organisasi */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fc3' /* kesehatan */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fc4' /* kesejahteraan-hewan */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fc5' /* Kesetaraan Gender */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fc6' /* ketenagakerjaan */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fc7' /* lingkungan */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fc8' /* olahraga */: return CATEGORY.ADMIN
+        case '549789127e6a6e2c691a1fc0' /* difabilitas */: return CATEGORY.SOCIAL
+        case '549789127e6a6e2c691a1fc1' /* hak-asasi-manusia */: return CATEGORY.SOCIAL
+        case '549789127e6a6e2c691a1fc2' /* kepemimpinan-dan-organisasi */: return CATEGORY.MANAGEMENT
+        case '549789127e6a6e2c691a1fc3' /* kesehatan */: return CATEGORY.SOCIAL
+        case '549789127e6a6e2c691a1fc4' /* kesejahteraan-hewan */: return CATEGORY.SOCIAL
+        case '549789127e6a6e2c691a1fc5' /* Kesetaraan Gender */: return CATEGORY.SOCIAL
+        case '549789127e6a6e2c691a1fc6' /* ketenagakerjaan */: return CATEGORY.SOCIAL
+        case '549789127e6a6e2c691a1fc7' /* lingkungan */: return CATEGORY.TECH
+        case '549789127e6a6e2c691a1fc8' /* olahraga */: return CATEGORY.COACH
         case '549789127e6a6e2c691a1fc9' /* penanggulangan-bencana */:return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fca' /* pendidikan */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fcd' /* pengembangan-anak-muda */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fcb' /* pengembangan-masyarakat */: return CATEGORY.ADMIN
-        case '5d4bbbe0288586f07259ce92' /* perdamaian-dan-toleransi */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fce' /* pertanian */: return CATEGORY.ADMIN
+        case '549789127e6a6e2c691a1fca' /* pendidikan */: return CATEGORY.COACH
+        case '549789127e6a6e2c691a1fcd' /* pengembangan-anak-muda */: return CATEGORY.COACH
+        case '549789127e6a6e2c691a1fcb' /* pengembangan-masyarakat */: return CATEGORY.COACH
+        case '5d4bbbe0288586f07259ce92' /* perdamaian-dan-toleransi */: return CATEGORY.SOCIAL
+        case '549789127e6a6e2c691a1fce' /* pertanian */: return CATEGORY.TECH
         case '549789127e6a6e2c691a1fcc' /* pusat-informasi-dan-kajian */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fcf' /* sains-dan-teknologi */: return CATEGORY.ADMIN
-        case '549789127e6a6e2c691a1fd0' /* seni-dan-budaya */: return CATEGORY.ADMIN
+        case '549789127e6a6e2c691a1fcf' /* sains-dan-teknologi */: return CATEGORY.RISET
+        case '549789127e6a6e2c691a1fd0' /* seni-dan-budaya */: return CATEGORY.DESIGN
         default: return 'not defined'
     }
 }
