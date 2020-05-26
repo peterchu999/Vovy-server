@@ -23,7 +23,7 @@ const isCustomAttributeNotAvail = (objectBaseData,object) => {
 }
 
 const init = async() => {
-    cron.schedule('0 12,23 * * *', async() => {
+    cron.schedule('0 12,18 * * *', async() => {
         try{
             const currData = await fetchAllActivity() 
             const newData = await crawl()
