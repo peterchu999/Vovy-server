@@ -5,11 +5,9 @@ const activitySchema = new mongoose.Schema({
     image: String,
     description: String,
     additional_information: Array,
-    registration_deadline: Date,
-    schedule: {
-        start_date: Date,
-        end_date: Date
-    },
+    registration_deadline: String,
+    start_date: String,
+    end_date: String,
     website_link: String,
     activity_category: Array,
     englishNeeded: Boolean,

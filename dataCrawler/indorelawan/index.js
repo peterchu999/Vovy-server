@@ -50,14 +50,12 @@ const convertFocusIdToCategory = (category) => { // not yet real category
 const mappingDataToActivityObjectFormat = ({n_title, additional_information, plain_description, media, registration_deadline, regular_end_date, regular_start_date, focuses, _id}) => {
     return {
         title: n_title,
-        image: `https://indorelawan.org/${media.access_path}`,
+        image: `https://indorelawan.org/${media[0].access_path}`,
         description: plain_description,
         additional_information: sanitizeHTMLToArray(additional_information),
-        registration_deadline: registration_deadline,
-        schedule: {
-            start_date: regular_start_date,
-            end_date: regular_end_date
-        },
+        registration_deadline: (new Date(registration_deadline)).toDateString(),
+        start_date: (new Date(regular_start_date)).toDateString(),
+        end_date: (new Date(regular_end_date)).toDateString(),
         website_link: `https://indorelawan.org/activity/${_id}`,
         activity_category: convertCategory(focuses),
         englishNeeded: false,

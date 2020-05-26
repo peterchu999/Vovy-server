@@ -19,11 +19,11 @@ const getObjectMap = (objectArray) => {
 }
 
 const isCustomAttributeNotAvail = (objectBaseData,object) => {
-    return objectBaseData[`${(new Date(object.registration_deadline)).toString()}${object.activity_category.toString()}${object.title}`] === undefined
+    return objectBaseData[`${object.registration_deadline}${object.activity_category.toString()}${object.title}`] === undefined
 }
 
 const init = async() => {
-    cron.schedule('0 12,18 * * *', async() => {
+    // cron.schedule('0 12,18 * * *', async() => {
         try{
             const currData = await fetchAllActivity() 
             const newData = await crawl()
@@ -35,7 +35,7 @@ const init = async() => {
         } catch(err) {
             console.log(err)
         }   
-    });
+    // });
 }
 
 module.exports = init

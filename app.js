@@ -11,7 +11,7 @@ const defaultRouter = require('./routers/defaultRouter')
 
 
 mongoose.connect(dbUrl, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
-.then(()=>console.log('connected!!!'))
+.then(()=>console.log(dbUrl))
 .catch((err) => console.log(err))
 
 
