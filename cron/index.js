@@ -1,6 +1,6 @@
 const crawl = require('../dataCrawler')
 const {loggger} = require('../services/cronLogger')
-const notify = () => {} // stub
+const notifyUserWithActivity = require('../apple-notification')
 const {createActivity, fetchAllActivity, deleteAllActivity} = require('../services/activityService')
 const cron = require('node-cron')
 
@@ -23,19 +23,19 @@ const isCustomAttributeNotAvail = (objectBaseData,object) => {
 }
 
 const init = async() => {
-    cron.schedule('0 12,18 * * *', async() => {
+    // cron.schedule('0 12,18 * * *', async() => {
         try{
             const currData = await fetchAllActivity() 
             const newData = await crawl()
             const updatedData =  getDiffData(currData, newData)
-            notify(updatedData)
+            notifyUserWithActivity(newData)
             loggger(updatedData)
             await deleteAllActivity()
             await createActivity(newData)
         } catch(err) {
             console.log(err)
         }   
-    });
+    // });
 }
 
 module.exports = init

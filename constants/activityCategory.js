@@ -7,5 +7,5 @@ module.exports = {
     DESIGN: "DESAIN",
     RISET: "RISET",
     MANAGEMENT: "MANAJEMEN",
-    COACH: "PELATIHAN"
+    COACH: "PELATIHAN"  
 }
