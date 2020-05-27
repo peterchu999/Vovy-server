@@ -3,7 +3,7 @@ const {createUser, updateUser} = require('../services/userService')
 
 const makeUser = async (req, res) => {
     try{
-        console.log(res.body)
+        console.log(req.body)
         const {uuid,deviceId, category = [], name = "not defined"} = req.body
         if(!uuid || !deviceId) {
             throw new Error("must have uuid and deviceId")
