@@ -3,7 +3,6 @@ const {createUser, updateUser} = require('../services/userService')
 
 const makeUser = async (req, res) => {
     try{
-        console.log('called')
         const {uuid,deviceId, category = [], name = "not defined"} = req.body
         if(!uuid || !deviceId) {
             throw new Error("must have uuid and deviceId")
@@ -13,6 +12,10 @@ const makeUser = async (req, res) => {
             category,
             name,
             deviceId
+        })
+        console.log({
+            ...status.SUCCESS,
+            message: "Create User Success"
         })
         res.json({
             ...status.SUCCESS,
