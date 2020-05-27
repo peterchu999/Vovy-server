@@ -22,6 +22,10 @@ const makeUser = async (req, res) => {
             message: "Create User Success"
         })
     } catch(err){
+        console.log({
+            ...status.ERROR,
+            message: err
+        })
         res.json({
             ...status.ERROR,
             message: err
@@ -42,11 +46,19 @@ const editUser = async (req, res) => {
             category,
             name
         })
+        console.log({
+            ...status.SUCCESS,
+            message: "Create User Success"
+        })
         res.json({
             ...status.SUCCESS,
             message: "Update User Success"
         })
     } catch (err) {
+        console.log({
+            ...status.ERROR,
+            message: err
+        })
         res.json({
             ...status.ERROR,
             message: err
