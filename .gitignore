@@ -1,2 +1,11 @@
+# Ignore Mac system files
+.DS_store
+
+# Ingnore Node Modules
 node_modules/
+
+# Ignore ENV
 .env
+
+# remove apple credential file
+*.p8

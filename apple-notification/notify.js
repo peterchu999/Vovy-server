@@ -23,11 +23,13 @@ const notify = (token, body = "please checkour new volunteering activity", title
     title,
     body
   })
-  console.clear()
+  // console.clear()
+  console.log(token)
+
   console.log(token + "from token")
   apnProvider.send(note, token).then( (result) => {
     // see documentation for an explanation of result
-    // console.log(result.failed)
+    console.log(result.failed)
   });
 }
 

@@ -18,7 +18,7 @@ mongoose.connect(dbUrl, {useNewUrlParser: true, useCreateIndex: true, useUnified
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// cron()
+cron()
 
 notify('068f9240f9b5272e2b66da53eef6ef45a40f5146d04dd7de9e87b6c93404cfba','testing')
 

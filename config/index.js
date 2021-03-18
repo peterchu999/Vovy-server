@@ -5,7 +5,7 @@ if (process.env.APP_STATE === 'dev'){
 
 module.exports ={
     port: process.env.PORT,
-    dbUrl: process.env.DBURL,
+    dbUrl: process.env.dbcloud,
     ip: process.env.IP,
     key: process.env.KEY,
     keyId: process.env.KEY_ID,
